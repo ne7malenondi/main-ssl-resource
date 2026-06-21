@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日常查询参考 · bet365 信息卡片</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f2f4f7;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #1f2a3a;
+      line-height: 1.6;
+      padding: 2rem 1.2rem;
+    }
+    .wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* 页眉主视觉卡片 */
+    .hero {
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.02);
+      padding: 2.8rem 2.4rem;
+      margin-bottom: 2.2rem;
+      border: 1px solid #e6e9ee;
+      transition: box-shadow 0.2s;
+    }
+    .hero:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0b1c2e;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.3rem;
+    }
+    .hero h1 small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #65748c;
+      letter-spacing: normal;
+      margin-left: 0.5rem;
+    }
+    .hero .lead {
+      font-size: 1.1rem;
+      color: #2c3e53;
+      max-width: 68ch;
+      margin-bottom: 1.6rem;
+    }
+    .hero .meta-tag {
+      display: inline-block;
+      background: #eef1f6;
+      padding: 0.3rem 1rem;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      color: #2f405b;
+      border: 1px solid #d6dce5;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+      margin-bottom: 2.2rem;
+    }
+    @media (max-width: 700px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+      }
+      .hero {
+        padding: 2rem 1.4rem;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 1.8rem 1.8rem 1.8rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.02);
+      border: 1px solid #e6e9ee;
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+      border-color: #d0d6e0;
+    }
+    .card h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #eef1f6;
+      color: #14273e;
+      letter-spacing: -0.01em;
+    }
+    .card p, .card li {
+      font-size: 0.96rem;
+      color: #2c3e53;
+    }
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .card ul li {
+      padding: 0.35rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .card ul li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: #6e7e97;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    /* 特殊卡片 双列+延伸 */
+    .feature-couple {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+      margin-bottom: 2.2rem;
+    }
+    @media (max-width: 700px) {
+      .feature-couple {
+        grid-template-columns: 1fr;
+      }
+    }
+    .feature-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem;
+      border: 1px solid #e6e9ee;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+    .feature-card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      color: #14273e;
+    }
+
+    /* 自然链接段落 */
+    .link-blend {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2.2rem;
+      border: 1px solid #e6e9ee;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+    .link-blend p {
+      font-size: 0.98rem;
+      margin-bottom: 0.8rem;
+    }
+    .link-blend p:last-child {
+      margin-bottom: 0;
+    }
+    .link-blend a {
+      color: #1e4e7a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #bcc9db;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .link-blend a:hover {
+      color: #0a2f4f;
+      border-bottom-color: #1e4e7a;
+    }
+
+    /* FAQ 摘要 */
+    .faq-mini {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.6rem 2rem;
+      border: 1px solid #e6e9ee;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      margin-bottom: 2.2rem;
+    }
+    .faq-mini h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #14273e;
+    }
+    .faq-item {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #f0f2f6;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-item strong {
+      display: block;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+      color: #1f2a3a;
+    }
+    .faq-item span {
+      font-size: 0.9rem;
+      color: #3e526a;
+    }
+
+    .footnote {
+      text-align: center;
+      font-size: 0.84rem;
+      color: #7788a1;
+      padding-top: 0.8rem;
+      border-top: 1px solid #dce1e9;
+      margin-top: 0.5rem;
+    }
+    .footnote a {
+      color: #3b5a78;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 主视觉 hero -->
+  <div class="hero">
+    <h1>
+      日常查询·对照
+      <small>信息卡片</small>
+    </h1>
+    <p class="lead">
+      一个侧重整理与延伸阅读的说明页，围绕 bet365 的常用场景、人群与功能线索展开，适合快速对照或补充理解。
+    </p>
+    <span class="meta-tag">📋 参考版 · 内容仅供示意</span>
+  </div>
+
+  <!-- 用途卡片 × 2 -->
+  <div class="card-grid">
+    <div class="card">
+      <h2>📌 常见用途</h2>
+      <ul>
+        <li>实时赛事数据与赔率对照</li>
+        <li>多终端即时查看赛程、比分</li>
+        <li>账户资金与交易明细查阅</li>
+        <li>规则说明、玩法类型梳理</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>👥 适合人群</h2>
+      <ul>
+        <li>日常关注体育赛事与数据变化的用户</li>
+        <li>习惯在比赛日进行多平台参考的爱好者</li>
+        <li>希望了解不同盘口表达方式的查阅者</li>
+        <li>对账户管理、功能布局有整理需求的人</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 双列：场景 + 提示 -->
+  <div class="feature-couple">
+    <div class="feature-card">
+      <h3>🧩 使用场景举例</h3>
+      <p style="font-size:0.95rem; margin-bottom:0.3rem;">
+        赛前快速核对各市场赔率变化，或赛后复盘时对照历史数据。在移动端与桌面端之间切换查看收藏项，整理个人关注列表。
+      </p>
+      <p style="font-size:0.95rem; margin-top:0.7rem;">
+        对于习惯同时打开多个标签页做信息比对的用户，<strong>bet365</strong> 的界面层级与分类方式值得花时间熟悉。
+      </p>
+    </div>
+    <div class="feature-card">
+      <h3>🔍 延伸提示</h3>
+      <p style="font-size:0.95rem;">
+        初次使用时，建议先浏览「规则」与「帮助」分区，了解基本术语与操作流程。可根据个人偏好调整语言、赔率格式与通知设置。
+      </p>
+      <p style="font-size:0.95rem; margin-top:0.7rem;">
+        不同地区的功能入口可能略有差异，以实际页面展示为准。
+      </p>
+    </div>
+  </div>
+
+  <!-- 自然链接段落（嵌入链接，不含进入/点击等词） -->
+  <div class="link-blend">
+    <p>
+      如果你希望直接查看官方平台的结构与内容，可以通过 <a href="https://main-ssl-bet365.com">bet365</a> 了解其功能模块与信息呈现方式。该站点涵盖了丰富的数据与赛事分类，适合作为日常对照参考的来源之一。
+    </p>
+    <p>
+      在延伸阅读中，也可以结合其他信息源进行交叉对比。保持多角度观察，有助于更全面地理解不同平台之间的差异与特点。
+    </p>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-mini">
+    <h3>📖 常见疑问摘要</h3>
+    <div class="faq-item">
+      <strong>如何快速定位特定赛事？</strong>
+      <span>使用页面顶部的搜索或按运动种类筛选，支持关键词与日期过滤。</span>
+    </div>
+    <div class="faq-item">
+      <strong>赔率格式可以修改吗？</strong>
+      <span>可以。在账户设置或显示偏好中，可选择小数、分数或美式赔率。</span>
+    </div>
+    <div class="faq-item">
+      <strong>移动端与桌面端功能是否一致？</strong>
+      <span>核心功能保持一致，部分高级筛选或批量操作在桌面端更直观。</span>
+    </div>
+  </div>
+
+  <!-- 底部 -->
+  <div class="footnote">
+    信息卡片 · 日常查询对照 · <a href="https://main-ssl-bet365.com">bet365</a>
+  </div>
+
+</div>
+</body>
+</html>
