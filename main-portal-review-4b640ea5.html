@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>产品说明 · 加拿大28</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f0f2f5;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 1024px;
+      width: 100%;
+    }
+
+    /* 页眉 */
+    .hero {
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      background: linear-gradient(145deg, #1e293b 0%, #334155 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero .sub {
+      color: #64748b;
+      font-size: 1rem;
+      border-bottom: 1px solid #d1d5db;
+      display: inline-block;
+      padding-bottom: 0.25rem;
+    }
+
+    /* 卡片系统 */
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e9edf2;
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.75rem;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.03);
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 2px solid #e2e8f0;
+      display: inline-block;
+    }
+
+    .card-sub {
+      color: #475569;
+      font-size: 0.95rem;
+      margin-top: 0.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.75rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.75rem;
+    }
+
+    .feature-item {
+      background: #f8fafc;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid #eef2f6;
+    }
+
+    .feature-item h3 {
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+      color: #0f172a;
+    }
+
+    .feature-item p {
+      font-size: 0.92rem;
+      color: #334155;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #e9eef3;
+      border-radius: 40px;
+      padding: 0.15rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #1e293b;
+      margin-right: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .action-tip {
+      background: #f1f5f9;
+      border-left: 4px solid #94a3b8;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      font-size: 0.94rem;
+      color: #1e293b;
+    }
+
+    .faq q {
+      font-weight: 500;
+      display: block;
+      margin-bottom: 0.2rem;
+      color: #0f172a;
+    }
+
+    .faq p {
+      margin-bottom: 0.8rem;
+      color: #334155;
+      font-size: 0.93rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #dce1e8;
+      margin: 0.5rem 0 1.25rem 0;
+    }
+
+    a {
+      color: #1e3a5f;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #94a3b8;
+      font-weight: 500;
+      transition: color 0.15s, text-decoration-color 0.15s;
+    }
+
+    a:hover {
+      color: #0f172a;
+      text-decoration-color: #0f172a;
+    }
+
+    .inline-link {
+      background: transparent;
+    }
+
+    .footer-note {
+      font-size: 0.85rem;
+      color: #6b7280;
+      text-align: center;
+      margin-top: 2.2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #d4dce5;
+    }
+
+    /* 响应式 */
+    @media (max-width: 720px) {
+      body {
+        padding: 1.25rem 1rem;
+      }
+
+      .card {
+        padding: 1.25rem 1.25rem;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      .grid-3 {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+
+      .feature-item {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO 区域 -->
+  <header class="hero">
+    <h1>加拿大28 · 产品说明</h1>
+    <div class="sub">轻量结构 · 数字场景 · 主题延伸</div>
+  </header>
+
+  <!-- 摘要卡片 -->
+  <section class="card">
+    <div class="card-title">📋 摘要</div>
+    <p style="margin-bottom: 0.75rem;">
+      以「加拿大28」这个关键词为锚点，能延伸出一组关于数字选择、周期整理和策略参考的内容框架。本页不是工具或游戏入口，而是一份框架性的说明，帮助有对应信息需求的人快速了解围绕该主题下的常见模块与使用逻辑。
+    </p>
+    <p>
+      整个体系围绕“28”这个数字节点展开，其背景涉及组合、频率与条件判断等内容。下面从亮点、建议场景、常见疑问几个角度依次梳理。
+    </p>
+    <div style="margin-top: 1rem;">
+      <span class="tag">#数字框架</span>
+      <span class="tag">#28区间</span>
+      <span class="tag">#内容整理</span>
+      <span class="tag">#信息说明</span>
+    </div>
+  </section>
+
+  <!-- 亮点：两列卡片 -->
+  <section class="grid-2">
+    <div class="card" style="margin-bottom: 0;">
+      <div class="card-title">✨ 亮点</div>
+      <ul style="list-style: none; padding-left: 0; margin-top: 0.6rem;">
+        <li style="padding: 0.4rem 0; border-bottom: 1px solid #ecf1f6;">• 结构清晰，围绕 0–27 的区间逻辑进行说明</li>
+        <li style="padding: 0.4rem 0; border-bottom: 1px solid #ecf1f6;">• 不依赖实时数据，专注方法与概念梳理</li>
+        <li style="padding: 0.4rem 0; border-bottom: 1px solid #ecf1f6;">• 信息组织克制，避免过度承诺或暗示</li>
+        <li style="padding: 0.4rem 0;">• 可作为独立参考页，与 <a href="https://main-portal-ca28.com">加拿大28</a> 的详细内容配合理解</li>
+      </ul>
+    </div>
+
+    <div class="card" style="margin-bottom: 0;">
+      <div class="card-title">🎯 适用场景</div>
+      <div class="feature-item" style="margin-bottom: 0.7rem;">
+        <h3>信息查阅</h3>
+        <p>当需要了解“加拿大28”框架下的常见术语、区间分布、策略参考时，本页可作为简洁的起点。</p>
+      </div>
+      <div class="feature-item">
+        <h3>对比与梳理</h3>
+        <p>适合希望系统理解该主题中大小、单双、组合等概念的读者，不含诱导性表述。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 特点 + 使用建议 (三列) -->
+  <section class="grid-3">
+    <div class="card" style="margin-bottom: 0;">
+      <div class="card-title">📌 特点</div>
+      <div style="margin-top: 0.2rem;">
+        <p style="font-size: 0.93rem; margin-bottom: 0.4rem;"><strong>· 区间分层</strong> — 将 0–27 按逻辑拆分为低、中、高三段，每段各自特点明确。</p>
+        <p style="font-size: 0.93rem; margin-bottom: 0.4rem;"><strong>· 组合参考</strong> — 提供常见的和值、跨度等维度的简要说明，便于形成整体认知。</p>
+        <p style="font-size: 0.93rem;"><strong>· 非实时性</strong> — 内容侧重框架理解，不涉及具体推荐或走势保证。</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom: 0;">
+      <div class="card-title">🧭 使用建议</div>
+      <ul style="padding-left: 1.2rem; font-size: 0.93rem; margin-top: 0.2rem;">
+        <li style="margin-bottom: 0.5rem;">先阅读摘要与 FAQ，建立整体印象。</li>
+        <li style="margin-bottom: 0.5rem;">将本说明页作为参考框架，配合更多资料交叉验证。</li>
+        <li style="margin-bottom: 0.5rem;">如有深入需求，可查阅 <a href="https://main-portal-ca28.com">加拿大28</a> 提供的详细内容。</li>
+        <li>保持理性，不盲目参照单一信息源。</li>
+      </ul>
+    </div>
+
+    <div class="card" style="margin-bottom: 0;">
+      <div class="card-title">🔒 可信说明</div>
+      <div class="action-tip" style="border-left-color: #94a3b8; background: #f9fbfd;">
+        <p style="font-size: 0.9rem; margin-bottom: 0.3rem;">本页仅作信息整理，不构成任何操作建议或收益承诺。</p>
+        <p style="font-size: 0.9rem; margin: 0;">所有内容均基于公开、通用的逻辑描述，读者需自行判断与筛选。请保持独立、审慎的态度。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ 摘要 -->
+  <section class="card">
+    <div class="card-title">❓ FAQ 摘要</div>
+    <div class="faq">
+      <q>“加拿大28”是一个具体的平台吗？</q>
+      <p>不是。这个关键词通常指代一套数字区间（0–27）及相关的内容体系，本说明页也是围绕该主题进行逻辑层面的梳理，而非指向某个特定站点或应用。</p>
+
+      <q>本页内容有实时性吗？</q>
+      <p>没有。这里描述的是通用框架与概念，不包含实时数据、动态图表或即时更新。如需更具体的信息，可访问 <a href="https://main-portal-ca28.com">加拿大28</a> 了解更多背景。</p>
+
+      <q>为什么强调“克制说明”？</q>
+      <p>因为任何涉及数字区间、策略类的内容都容易被夸大或曲解。我们选择平实、客观的表述方式，只陈述框架结构，不渲染效果，避免产生误导。</p>
+
+      <q>内容可以自由参考吗？</q>
+      <p>可以。本页内容基于常见的逻辑整理，不含专有或保密信息。欢迎作为独立参考资料使用，但请勿曲解为具体操作指导。</p>
+    </div>
+    <hr />
+    <p style="font-size: 0.9rem; color: #475569;">📎 更多细节请直接参阅 <a href="https://main-portal-ca28.com">加拿大28</a> 的相关页面。</p>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer-note">
+    产品说明 · 加拿大28 &nbsp;|&nbsp; 内容仅供信息参考，请理性判断<br />
+    <span style="font-size: 0.75rem; opacity: 0.6;">页面构建基于通用框架，无任何隐含承诺。</span>
+  </footer>
+
+</div>
+</body>
+</html>
